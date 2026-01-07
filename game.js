@@ -22,6 +22,10 @@ const config = {
 
 const game = new Phaser.Game(config);
 
+window.addEventListener('resize', () => {
+    game.scale.resize(window.innerWidth, window.innerHeight - 50);
+});
+
 let player;
 let stars;
 let shark;
@@ -190,5 +194,6 @@ let buttonio;
 				player.anims.play('turn');
 				scoreText.setText('Game Over!');
 			}
+
 
 
